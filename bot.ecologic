@@ -1,0 +1,57 @@
+import discord
+from discord.ext import commands
+import os
+
+description = '''Um bot para ajudar com ideias ecológicas e sustentáveis.  digite $desperdicio se voce for um adulto e quer desperdiçar menos. digite $reciclagem se for um adolescente que quer aprender mais sobre reciclagem. digite $meio_ambiente se voce quer saber mais sobre meio ambiente.'''
+
+# A variável intents armazena as permissões do bot
+intents = discord.Intents.default()
+# Ativar a permissão para ler o conteúdo das mensagens
+intents.message_content = True
+
+# Criar um bot e passar as permissões
+bot = commands.Bot(command_prefix='$', description=description, intents=intents)
+
+@bot.event
+async def on_ready():
+    print('------'*10)
+    print(f'Logged in as {bot.user} (ID: {bot.user.id})')
+    print('------'*10)
+
+#despedicio vai ser para os adultos
+
+@bot.command(name='desperdicio')
+async def desperdicio(ctx):
+    texto = (
+        "Aqui estão algumas ideias para evitar o desperdício:\n"
+        "- Compre apenas o suficiente para o momento.\n"
+        "- Planeje suas refeições da semana para não estragar comida.\n"
+        "- Reutilize potes de vidro para guardar mantimentos."
+    )
+    await ctx.send(texto)
+
+#reciclagem vai ser para os adolescentes
+
+@bot.command(name='reciclagem')
+async def reciclagem(ctx):
+    texto = (
+        "Saiba como separar e reciclar o seu lixo:\n"
+        "- Tenha duas lixeiras em casa: uma para lixo orgânico e outra para recicláveis.\n"
+        "- Lave embalagens plásticas e de vidro antes de descartar.\n"
+        "- Descarte pilhas e baterias em locais de coleta específicos."
+    )
+    await ctx.send(texto)
+
+#meio ambiente vai ser para os pessoas que se preocupam com o meio ambiente
+
+@bot.command(name='meio_ambiente', aliases=['meioambiente'])
+async def meio_ambiente(ctx):
+    texto = (
+        "O impacto do plástico no Meio Ambiente:\n"
+        "- O plástico demora centenas de anos para se decompor na natureza.\n"
+        "- Evite o uso de sacolas plásticas: prefira sacolas retornáveis e ecológicas.\n"
+        "- O plástico polui os oceanos e prejudica muitos animais."
+    )
+    await ctx.send(texto)
+
+bot.run('')
