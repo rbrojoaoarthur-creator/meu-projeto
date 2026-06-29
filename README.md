@@ -1,1 +1,1 @@
-# meu-projeto
+🌿 Como usar o EcoBot 🌿Olá! Este bot foi criado para ajudar com ideias ecológicas e sustentáveis. Para interagir com ele, use os seguintes comandos no chat:$desperdicio – Dicas práticas para adultos sobre como planejar refeições e evitar o desperdício de alimentos em casa.$reciclagem – Guia rápido para adolescentes aprenderem a separar o lixo corretamente e descartar pilhas e baterias.$meio_ambiente (ou $meioambiente) – Informações sobre o impacto do plástico na natureza e dicas para proteger os oceanos.
